@@ -1,18 +1,26 @@
-body {
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-    color: #00B7FF;
-}
-
-.menu {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-}
-
-.menu>li {
-    display: block;
-    padding: 2px;
-}
+    body {
+        font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    }
+    
+    a {
+        color: #00B7FF;
+    }
+    
+    .menu {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .menu>li {
+        display: block;
+        padding: 2px;
+    }
+    
+    #edit_info {
+        font-size: 0.8rem;
+    }
+    
+    #edit_info span {
+        font-style: italic;
+    }

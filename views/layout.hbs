@@ -6,10 +6,12 @@
   </head>
   <body>
 	  {{> menu menu}}
+	  {{#if page.status}}
 	  {{#if page.edit}}
 			{{> page_edit page.data }}  
 	  {{else}} 
 			{{> page page.data }}
+	  {{/if}}
 	  {{/if}}
     {{{body}}}
   </body>

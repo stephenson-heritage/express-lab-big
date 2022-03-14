@@ -1,8 +1,14 @@
-<input type="text" value="{{title}}" />
+
+
+<form method="post" enctype="multipart/form-data" action="/page/{{pageKey}}">
+<input type="text" name="title" id="title" value="{{title}}" />
 <hr />
 
-<textarea name=""content" cols="50">{{{content}}}</textarea>
+<textarea name="content" id="content" cols="80">{{{content}}}</textarea>
 
+<hr />
+<input type="submit" />
+</form>
 
 <div id="edit_info">
 <span>{{pageKey}}</span> last edited by <span>{{username}}</span> at <span>{{dateModified}}</span>

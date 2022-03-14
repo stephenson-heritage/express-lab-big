@@ -27,6 +27,16 @@ router.get('/page/:pageKey', async(req, res, next) => {
     let pageKey = req.params.pageKey.trim().toLowerCase();
     loadPage(pageKey, req, res, next);
 });
+
+// data sent
+router.post('/page/:pageKey', async(req, res, next) => {
+    let pageKey = req.params.pageKey.trim().toLowerCase();
+
+    console.log(req.body);
+
+    loadPage(pageKey, req, res, next);
+});
+
 router.get('/page/:pageKey/edit', async(req, res, next) => {
     let pageKey = req.params.pageKey.trim().toLowerCase();
     loadPage(pageKey, req, res, next, true);

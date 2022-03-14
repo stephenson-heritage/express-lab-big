@@ -1,7 +1,8 @@
 <h1>{{title}}</h1>
 <p>{{{content}}}</p>
 
-
+{{#if username}}
 <div id="edit_info">
 <span>{{pageKey}}</span> last edited by <span>{{username}}</span> at <span>{{dateModified}}</span>
 </div>
+{{/if}}

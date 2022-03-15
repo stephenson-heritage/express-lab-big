@@ -20,12 +20,12 @@ Page.getPage = async(key) => {
     return result;
 };
 
-Page.updatePage = async(key, pageData) => {
+Page.updatePage = async(key, pageData, userid) => {
 
     let result = {};
 
     let dbConn = await dbConnPool.getConnection();
-    await dbConn.query("UPDATE `page` SET `title`=?,content=? WHERE `pageKey`=?;", [pageData.title, pageData.content, key]);
+    await dbConn.query("UPDATE `page` SET `title`=?,content=?,lastEditUser=? WHERE `pageKey`=?;", [pageData.title, pageData.content, userid, key]);
     dbConn.end();
 
     return { status: true };

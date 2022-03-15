@@ -1,5 +1,10 @@
+<div id="login">
 
-<form id="login_form" action="/page/home" method="post">
+{{#if login.status}}
+	Logged in as <em>{{login.user.username}}</em>, <a href="/page/{{data.pageKey}}?logout">Logout</a>
+{{else}}
+
+<form id="login_form" action="/page/{{data.pageKey}}" method="post">
 <input type="hidden" name="function" value="login" />
 <div>
 	<label for="username">Username:</label>
@@ -11,3 +16,5 @@
 </div>
 <input type="submit" value="Login" />
 </form>
+{{/if}}
+</div>

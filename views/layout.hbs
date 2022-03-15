@@ -6,12 +6,12 @@
   </head>
   <body>
 	  {{> menu menu}}
-	  {{> login}}
+	  {{> login page}}
 	  {{#if page.status}}
 	  {{#if page.edit}}
-			{{> page_edit page.data }}  
+			{{> page_edit page }}  
 	  {{else}} 
-			{{> page page.data }}
+			{{> page page }}
 	  {{/if}}
 	  {{/if}}
     {{{body}}}

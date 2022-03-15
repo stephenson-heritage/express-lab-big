@@ -1,11 +1,14 @@
-<h1>{{title}}</h1>
-<p>{{{content}}}</p>
+<h1>{{data.title}}</h1>
+<p>{{{data.content}}}</p>
 
+
+{{#if login.status}}
 <div id="util_container">
-	<a href="/page/{{pageKey}}/edit">Edit this page</a>
+	<a href="/page/{{data.pageKey}}/edit">Edit this page</a>
 </div>
-{{#if username}}
+{{/if}}
+{{#if data.username}}
 <div id="edit_info">
-<span>{{pageKey}}</span> last edited by <span><a href="mailto:{{email}}">{{username}}</a></span> at <span>{{dateModified}}</span>
+<span>{{data.pageKey}}</span> last edited by <span><a href="mailto:{{data.email}}">{{data.username}}</a></span> at <span>{{data.dateModified}}</span>
 </div>
 {{/if}}

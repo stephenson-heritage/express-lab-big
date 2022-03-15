@@ -8,8 +8,11 @@ const logger = require('morgan');
 const hbs = require('hbs');
 
 
+const login = require('./middleware/login');
+
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const { application } = require('express');
 
 
 
@@ -23,11 +26,10 @@ app.set('view engine', 'hbs');
 app.use(logger('dev'));
 app.use(express.urlencoded({ extended: true })); // extended : true
 app.use(express.json());
-
-
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(login);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

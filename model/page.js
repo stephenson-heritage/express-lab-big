@@ -7,7 +7,7 @@ Page.getPage = async(key) => {
     let result = {};
 
     let dbConn = await dbConnPool.getConnection();
-    const rows = await dbConn.query("SELECT pageKey,title,content,dateModified,username FROM `page` JOIN user ON `page`.lastEditUser = user.userId  WHERE pageKey = ?", [key]);
+    const rows = await dbConn.query("SELECT pageKey,title,content,dateModified,username,email FROM `page` JOIN user ON `page`.lastEditUser = user.userId  WHERE pageKey = ?", [key]);
     dbConn.end();
 
     if (rows.length > 0) {

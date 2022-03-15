@@ -32,24 +32,28 @@ router.get('/page/:pageKey', async(req, res, next) => {
 router.post('/page/:pageKey', async(req, res, next) => {
     let pageKey = req.params.pageKey.trim().toLowerCase();
 
-    //console.log(req.body);
+    console.log(req.body);
 
     if (pageKey != '') {
-        let oldpage = await pageModel.getPage(pageKey);
-        if (oldpage.status) {
-            await pageModel.updatePage(pageKey, req.body);
-            let menuItems = await menuModel.getItems();
-            menuItems.name = "main";
-            let page = await pageModel.getPage(pageKey);
-            res.render('index', { page: page, menu: menuItems });
-            return;
 
+        if (req.body.function === "edit") {
+            let oldpage = await pageModel.getPage(pageKey);
+            if (oldpage.status) {
+                await pageModel.updatePage(pageKey, req.body);
+            }
         }
-    }
 
+        let menuItems = await menuModel.getItems();
+        menuItems.name = "main";
+        let page = await pageModel.getPage(pageKey);
+        res.render('index', { page: page, menu: menuItems });
+        return;
+
+    }
     //res.send(`cannot update ${pageKey}`);
 
     next();
+
 });
 
 router.get('/page/:pageKey/edit', async(req, res, next) => {

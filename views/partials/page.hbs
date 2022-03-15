@@ -1,6 +1,9 @@
 <h1>{{title}}</h1>
 <p>{{{content}}}</p>
 
+<div id="util_container">
+	<a href="/page/{{pageKey}}/edit">Edit this page</a>
+</div>
 {{#if username}}
 <div id="edit_info">
 <span>{{pageKey}}</span> last edited by <span>{{username}}</span> at <span>{{dateModified}}</span>

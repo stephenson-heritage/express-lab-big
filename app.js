@@ -1,6 +1,6 @@
 const createError = require('http-errors');
 const express = require('express');
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 const path = require('path');
 
 const cookieParser = require('cookie-parser');
@@ -21,7 +21,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true })); // extended : true
 app.use(express.json());
 
 

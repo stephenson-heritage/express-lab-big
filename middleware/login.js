@@ -4,7 +4,6 @@ const Login = async(req, res, next) => {
 
     let login = { status: false };
 
-
     if (req.query.logout !== undefined) {
         res.clearCookie("username");
         res.clearCookie("h");

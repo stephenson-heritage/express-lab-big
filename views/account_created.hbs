@@ -1,0 +1,9 @@
+{{#if result.status}}
+	Account Created!
+	{{result.message}}
+	{{> login}}
+{{else}}
+	Account creation failed 😒😒
+	{{result.message}}
+	<a href="/users/create">Create Account</a>
+{{/if}}

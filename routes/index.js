@@ -25,6 +25,11 @@ router.get('/', async function(req, res, next) {
     loadPage('home', req, res, next)
 });
 
+router.all('/page', async(req, res, next) => {
+    let pageKey = 'home';
+    loadPage(pageKey, req, res, next);
+});
+
 router.get('/page/:pageKey', async(req, res, next) => {
     let pageKey = req.params.pageKey.trim().toLowerCase();
     loadPage(pageKey, req, res, next);

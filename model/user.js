@@ -59,7 +59,7 @@ Users.authWithPassword = async function(username, password) {
     //console.log(passHash, userInfo.passHash);
 
     if (userInfo.passHash === passHash) {
-        // passwords match, username exists
+        // password (hashes) match, username exists
         userInfo.cookieHash = sha256(new Date().getTime() + "" + userInfo.userId).toString();
         this.setCookieHash(userInfo.username, userInfo.cookieHash);
 

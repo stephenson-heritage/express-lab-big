@@ -2,7 +2,7 @@ const userModel = require('../model/user');
 
 const Login = async(req, res, next) => {
 
-    var login = { status: false };
+    let login = { status: false };
 
 
     if (req.query.logout !== undefined) {

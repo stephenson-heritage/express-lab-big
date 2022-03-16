@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{page.data.title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-	  {{> menu menu}}
-	  {{> login page}}
-	  {{#if page.status}}
-	  {{#if page.edit}}
-			{{> page_edit page }}  
-	  {{else}} 
-			{{> page page }}
-	  {{/if}}
-	  {{/if}}
-    {{{body}}}
-  </body>
+
+<head>
+	<title>{{page.data.title}}</title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+	{{{body}}}
+</body>
+
 </html>

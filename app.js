@@ -29,7 +29,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(login);
+app.use(login); // use the login middleware for all routes
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

@@ -1,0 +1,9 @@
+	  {{> menu menu}}
+	  {{> login page}}
+	  {{#if page.status}}
+		{{#if page.edit}}
+				{{> page_edit page }}  
+		{{else}} 
+				{{> page page }}
+		{{/if}}
+	  {{/if}}

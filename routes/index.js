@@ -5,10 +5,13 @@ const menuModel = require('../model/menu');
 const pageModel = require('../model/page');
 
 let loadPage = async function(pageKey, req, res, next, edit = false) {
+
     if (pageKey != '') {
         let page = await pageModel.getPage(pageKey);
         if (page.status) {
+
             let menuItems = await menuModel.getItems();
+
             menuItems.name = "main";
             page.edit = edit;
             page.login = req.login;

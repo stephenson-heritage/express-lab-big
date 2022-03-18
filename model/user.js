@@ -14,7 +14,7 @@ Users.addUser = async function(userData) {
     if (userData !== undefined && userData.username !== undefined && userData.username.length > 0 && userData.password !== undefined && userData.first !== undefined && userData.email !== undefined) {
         userData.username = userData.username.toLowerCase();
         let userResult = await this.getUserForUsername(userData.username); // find if already existing user
-        console.log(userResult);
+        //console.log(userResult);
         if (userResult.status) {
             result.message = `user ${userData.username} already exists`;
         } else {

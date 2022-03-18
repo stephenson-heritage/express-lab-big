@@ -31,6 +31,21 @@ Page.updatePage = async(key, pageData, userid) => {
     return { status: true };
 };
 
+Page.createPage = async(pageData, userid) => {
 
+    let result = {};
+
+    let dbConn = await dbConnPool.getConnection();
+    try {
+        const sqlResult = await dbConn.query("INSERT INTO `page` (`pageKey`,`title`,`content`,lastEditUser) VALUES (?,?,?,?);", [pageData.pageKey, pageData.title, pageData.content, userid]);
+    } catch (err) {
+        dbConn.end();
+        return { status: false, message: err.message };
+    }
+
+    dbConn.end();
+
+    return { status: true };
+};
 
 module.exports = Page;

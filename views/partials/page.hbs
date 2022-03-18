@@ -3,12 +3,14 @@
 
 
 {{#if login.status}}
-<div id="util_container">
-	<a href="/page/{{data.pageKey}}/edit">Edit this page</a>
-</div>
+	<div id="util_container">
+		<a href="/page/{{data.pageKey}}/edit">Edit this page</a>
+		<a href="/page/new">Create Page</a>
+	</div>
 {{/if}}
 {{#if data.username}}
-<div id="edit_info">
-<span>{{data.pageKey}}</span> last edited by <span><a href="mailto:{{data.email}}">{{data.username}}</a></span> at <span>{{data.dateModified}}</span>
-</div>
+	<div id="edit_info">
+		<span>{{data.pageKey}}</span> last edited by <span><a href="mailto:{{data.email}}">{{data.username}}</a></span> at
+		<span>{{data.dateModified}}</span>
+	</div>
 {{/if}}
